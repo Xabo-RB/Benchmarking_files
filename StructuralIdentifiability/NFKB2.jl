@@ -1,5 +1,5 @@
-#No funciona
-# The model is out of reach at the moment but can be analyzed by SIAN (https://github.com/pogudingleb/SIAN)
+#Tomasz Lipniacki, Pawel Paszek, Allan R Brasier, Bruce Luxon, and Marek Kimmel. Mathematical
+#model of nf-κb regulatory module. Journal of theoretical biology, 228(2):195–215, 2004.
 using Logging
 
 using StructuralIdentifiability
