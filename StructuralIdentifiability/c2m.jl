@@ -16,7 +16,7 @@ ode = @ODEmodel(
 
 @time println(assess_identifiability(ode))
 
-    
+#u constant
 using Logging
 
 using StructuralIdentifiability
