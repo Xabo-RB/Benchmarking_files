@@ -31,6 +31,8 @@ ode = @ODEmodel(
     y6(t) = x12(t)
 )
 
+QQ = StructuralIdentifiability.Nemo.QQ
+
 ode = set_parameter_values(ode, Dict(
     a1 => QQ(1, 2),
     a2 => QQ(1, 5),
@@ -50,4 +52,9 @@ ode = set_parameter_values(ode, Dict(
     c3c => QQ(4, 10^(4))                             
 ))
 
-@time io_equations = find_ioequations(ode)
+println(assess_local_identifiability(ode))
+
+@time println(assess_identifiability(ode))
+
+# Currently out of reach...
+# @time io_equations = find_ioequations(ode)

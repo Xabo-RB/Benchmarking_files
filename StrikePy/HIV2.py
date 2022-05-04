@@ -1,11 +1,11 @@
-import sympy as sym
-
 #--------------------------------------------------------------------------
 # HIV Model with Constant and Time Varying Parameters
 # Miao H, Xia X, Perelson AS, Wu H.
 # "On identifiability of nonlinear ODE models and applications in viral dynamics."
 # SIAM review 53.1 (2011): 3-39.
 #-------------------------------------------------------------------------
+
+import sympy as sym
 
 # 4 states
 x1 = sym.Symbol('x1')
