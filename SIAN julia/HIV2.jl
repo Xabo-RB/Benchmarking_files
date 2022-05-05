@@ -2,12 +2,7 @@
 #of hiv-1 dynamics in vivo. SIAM review,
 #41(1):3–44, 1999
 
-using Logging
-
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
+using Logging, SIAN
 
 
 ode = @ODEmodel(
@@ -19,5 +14,4 @@ ode = @ODEmodel(
     y2(t) = x4(t)
 )
 
-
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
