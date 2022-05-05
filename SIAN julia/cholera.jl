@@ -2,12 +2,8 @@
 # Model distinguishability and inference robustness in mechanisms of cholera transmission and loss of immunity
 # https://doi.org/10.1016/j.jtbi.2017.01.032
 # Eq. (3)
-using Logging
+using Logging, SIAN
 
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
 
 ode = @ODEmodel(
     S'(t) = mu - bi * S(t) * I(t) - bw * S(t) * W(t) - mu * S(t) + a * R(t),
@@ -18,4 +14,6 @@ ode = @ODEmodel(
     y2(t) = S(t)+I(t)+R(t)
 )
 
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
+
+println(res)
