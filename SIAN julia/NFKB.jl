@@ -2,12 +2,7 @@
 #model of nf-κb regulatory module. Journal of theoretical biology, 228(2):195–215, 2004.
 
 
-using Logging
-
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
+using Logging,SIAN
 
 
 ode = @ODEmodel(
@@ -34,7 +29,7 @@ ode = @ODEmodel(
     y5(t) = x7(t)
 )
   
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
 
 
 

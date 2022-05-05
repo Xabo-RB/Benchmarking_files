@@ -2,12 +2,8 @@
 #global identifiability of biological and biomedical models with the daisy software. Computers in Biology
 #and Medicine, 40(4):402–407, 2010
 
-using Logging
+using Logging, SIAN
 
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
 
 ode = @ODEmodel(
     x1'(t) = -(k3+k7)*x1(t) +k4*x2(t),
@@ -18,7 +14,7 @@ ode = @ODEmodel(
     y1(t) = x5(t)
 )
 
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
 
 
 

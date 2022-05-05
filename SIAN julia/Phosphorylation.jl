@@ -1,13 +1,7 @@
 #Carsten Conradi and Anne Shiu. Dynamics of posttranslational modification systems: Recent progress
 #and future directions. Biophysical journal, 114(3):507–515, 2018
 
-using Logging
-
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
-
+using Logging, SIAN
 
 ode = @ODEmodel(
     x5'(t) = k5*x6(t) + k4*x6(t) - k6*x5(t)*x3(t),
@@ -21,4 +15,4 @@ ode = @ODEmodel(
 )
 
 
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))

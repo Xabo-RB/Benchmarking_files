@@ -1,11 +1,7 @@
 #Tomasz Lipniacki, Pawel Paszek, Allan R Brasier, Bruce Luxon, and Marek Kimmel. Mathematical
 #model of nf-κb regulatory module. Journal of theoretical biology, 228(2):195–215, 2004.
-using Logging
 
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
+using Logging, SIAN
 
 ode = @ODEmodel(
     x1'(t) = k_prod  - k_deg * x1(t) - k1 * x1(t) * u(t),
@@ -31,30 +27,23 @@ ode = @ODEmodel(
     y6(t) = x12(t)
 )
 
-QQ = StructuralIdentifiability.Nemo.QQ
-
-ode = set_parameter_values(ode, Dict(
-    a1 => QQ(1, 2),
-    a2 => QQ(1, 5),
-    a3 => QQ(1),
-    c1a => QQ(5, 10^(7)),
-    c2a => QQ(0),
-    c5a => QQ(1, 10^(4)),
-    c6a => QQ(2, 10^(5)),
-    c1 => QQ(5, 10^(7)),
-    c2 => QQ(0),
-    c3 => QQ(4, 10^(4)),
-    c4 => QQ(1, 2),
-    kv => QQ(5),
-    e1a => QQ(5, 10^(4)),
-    c1c => QQ(5, 10^(7)),
-    c2c => QQ(0),
-    c3c => QQ(4, 10^(4))                             
+ode = SIAN.set_parameter_values(ode, OrderedDict(
+    a1 => Nemo.QQ(1, 2),
+    a2 => Nemo.QQ(1, 5),
+    a3 => Nemo.QQ(1),
+    c_1a => Nemo.QQ(5, 10^(7)),
+    c_2a => Nemo.QQ(0),
+    c_5a => Nemo.QQ(1, 10^(4)),
+    c_6a => Nemo.QQ(2, 10^(5)),
+    c1 => Nemo.QQ(5, 10^(7)),
+    c2 => Nemo.QQ(0),
+    c3 => Nemo.QQ(4, 10^(4)),
+    c4 => Nemo.QQ(1, 2),
+    kv => Nemo.QQ(5),
+    e_1a => Nemo.QQ(5, 10^(4)),
+    c_1c => Nemo.QQ(5, 10^(7)),
+    c_2c => Nemo.QQ(0),
+    c_3c => Nemo.QQ(4, 10^(4))
 ))
 
-println(assess_local_identifiability(ode))
-
-@time println(assess_identifiability(ode))
-
-# Currently out of reach...
-# @time io_equations = find_ioequations(ode)
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3, infolevel = 10, nthrds = 1))

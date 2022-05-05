@@ -2,13 +2,7 @@
 #plications en modélisation). PhD thesis, Paris 9, 1986
 
 
-using Logging
-
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
-
+using Logging, SIAN
 
 ode = @ODEmodel(
     x1'(t) = u1(t)-(k1+k2)*x1(t),
@@ -19,7 +13,7 @@ ode = @ODEmodel(
     y2(t) = s3*x3(t)
 )
 
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
 
 
 

@@ -3,12 +3,7 @@
 #5(1):1–17, 2015
 
 
-using Logging
-
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
+using Logging,SIAN
 
 
 
@@ -21,7 +16,7 @@ ode = @ODEmodel(
     y3(t) = x3(t)
 )
 
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
 
 
 

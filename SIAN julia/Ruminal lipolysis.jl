@@ -2,12 +2,9 @@
 #biohydrogenation of long-chain fatty acids: new insights from old data. Journal of Dairy Science,
 #91(2):731–742, 2008
 
-using Logging
+using Logging,SIAN
 
-using StructuralIdentifiability
 
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
 
 ode = @ODEmodel(
     x1'(t) = -x1(t) * x5(t) / (k2 + x1(t)),
@@ -20,7 +17,7 @@ ode = @ODEmodel(
     y3(t) = x4(t)
 )
 
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
 
 
 

@@ -1,11 +1,7 @@
 #Joseph Distefano. Dynamic systems biology modeling and simulation. Academic Press, 2015
 
-using Logging
+using Logging,SIAN
 
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
 
 ode = @ODEmodel(
     x1'(t) = (p1*x4(t)) - (p3*x1(t)) - p4*( (x1(t)^2/(p5+x1(t)))* (1+ (p6*u1(t)/(p7+u1(t))) ) ),
@@ -18,7 +14,7 @@ ode = @ODEmodel(
     y4(t) = x4(t)
 )
 
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1))
 
 
 
