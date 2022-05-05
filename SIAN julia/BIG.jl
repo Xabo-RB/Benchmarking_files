@@ -1,12 +1,9 @@
 # Diane T Finegood, Luisa Scaglia, and Susan Bonner-Weir. Dynamics of β-cell mass in the growing rat
 # pancreas: estimation with a simple mathematical model. Diabetes, 44(3):249–256, 1995
 
-using Logging
+using Logging, SIAN
 
-using StructuralIdentifiability
 
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
 
 ode = @ODEmodel(
     G'(t) = u1(t)-(c+si*II(t))*G(t),
@@ -15,7 +12,10 @@ ode = @ODEmodel(
     y1(t) = G(t)
 )
 
-@time println(assess_identifiability(ode))
+
+@time res = identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1)
+
+println(res)
 
 
 
