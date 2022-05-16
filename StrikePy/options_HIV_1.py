@@ -5,11 +5,11 @@ import sympy as sym
 from math import inf
 ###############################################################################
 # (1) NAME OF THE MODEL TO BE STUDIED:
-modelname = 'sirs'
+modelname = 'HIV_1'
 ##############################################################################
 # (2) FISPO ANALYSIS OPTIONS:
 checkObser = 1    # check state observability, i.e. identifiability of initial conditions (1 = yes; 0 = no).
-maxLietime = inf  # max. time allowed for calculating 1 Lie derivative (seconds)
+maxLietime = 100  # max. time allowed for calculating 1 Lie derivative (seconds)
 nnzDerU = [0] # Number of non-zero known input derivatives in each experiment (Rows=inputs;Columns=experiments)
 nnzDerW    = [0] # numbers of nonzero derivatives of the unmeasured inputs (w); may be 'inf'
 ###############################################################################
