@@ -9,8 +9,8 @@ modelname = 'tumor'
 ##############################################################################
 # (2) FISPO ANALYSIS OPTIONS:
 checkObser = 1    # check state observability, i.e. identifiability of initial conditions (1 = yes; 0 = no).
-maxLietime = inf  # max. time allowed for calculating 1 Lie derivative (seconds)
-nnzDerU = [1] # Number of non-zero known input derivatives in each experiment (Rows=inputs;Columns=experiments)
+maxLietime = 100  # max. time allowed for calculating 1 Lie derivative (seconds)
+nnzDerU = [inf] # Number of non-zero known input derivatives in each experiment (Rows=inputs;Columns=experiments)
 nnzDerW    = [inf] # numbers of nonzero derivatives of the unmeasured inputs (w); may be 'inf'
 ###############################################################################
 # (3) KNOWN/IDENTIFIABLE PARAMETERS (parameters assumed known, or already classified as identifiable):
