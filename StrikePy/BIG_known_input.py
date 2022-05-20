@@ -34,7 +34,7 @@ muminus = 0.025/(24*60)
 # auxiliary functions
 rhoG        = G**2/(alpha**2+G**2)
 lambdaplus  = muplus/(1+(8.4/G)**1.7)
-lambdaminus = muminus/(1+(G/4.8)**8.5)
+lambdaminus = muminus/(1+(G/4.8)**8.4)
 
 # dynamic equations
 f = [[inputs-(c+si*I)*G], [beta*(lambdaplus-lambdaminus)], [p1*beta*rhoG-gamma*I]]
