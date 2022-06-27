@@ -11,15 +11,15 @@ NU_:=1$
 %NUMBER OF OUTPUTS
 NY_:=8$
 %MODEL EQUATIONS
-C_:={df(x1,t)=-t1*x1*c1*u1-t5*x1+t6*x2,
+C_:={df(x1,t)=-t1*x1*2.265*u1-t5*x1+t6*x2,
 	df(x2,t)=t5*x1-t6*x2,
-	df(x3,t)=t1*c1*u1*x1-t2*x3*(-x6+2.8),
+	df(x3,t)=t1*2.265*u1*x1-t2*x3*(-x6+2.8),
 	df(x4,t)=t2*x3*(-x6+2.8)-t3*x4,
 	df(x5,t)=t3*x4-t4*x5,
 	df(x6,t)= -t7*x3*x6/(1+t13*x1)-t7*x4*x6/(1+t13*x13)+t8*(-x6+2.8)*c2,
 	df(x8,t)=-t9*x8*(-x6+2.8)+t10*(-x8+165)*c2,
 	df(x10,t)=t11*(-x8+165),
-	df(x11,t)=-t12*c1*u1*x11,
+	df(x11,t)=-t12*2.265*u1*x11,
 	df(x13,t)=x10*t14/(t15+x10)-t16*x13,
 	y1=x1+x3+x4,
 	y2 = t18*(x3 + x4 + x5 +(0.34-x11)),
