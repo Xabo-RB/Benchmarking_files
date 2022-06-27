@@ -6,15 +6,15 @@ syms t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12...
     t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23
 
 % Step 2: write the system functions 
-F=[-t1*x1*c1*u1-t5*x1+t6*x2;
+F=[-t1*x1*2.265*u1-t5*x1+t6*x2;
 	t5*x1-t6*x2;
-	t1*c1*u1*x1-t2*x3*(-x6+2.8);
+	t1*2.265*u1*x1-t2*x3*(-x6+2.8);
 	t2*x3*(-x6+2.8)-t3*x4;
 	t3*x4-t4*x5;
-	-t7*x3*x6/(1+t13*x1)-t7*x4*x6/(1+t13*x13)+t8*(-x6+2.8)*c2;
-	-t9*x8*(-x6+2.8)+t10*(-x8+165)*c2;
+	-t7*x3*x6/(1+t13*x1)-t7*x4*x6/(1+t13*x13)+t8*(-x6+2.8)*92;
+	-t9*x8*(-x6+2.8)+t10*(-x8+165)*92;
 	t11*(-x8+165);
-	-t12*c1*u1*x11;
+	-t12*2.265*u1*x11;
 	x10*t14/(t15+x10)-t16*x13];
 
 % Step 3: write the output functions
