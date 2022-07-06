@@ -26,14 +26,14 @@ ode = @ODEmodel(
     x9'(t) = -t12*2*u(t)*x9(t),
     x10'(t) = x8(t)*t14/(t15+x8(t))-t16*x10(t),
     y1(t) = x1(t)+x3(t)+x4(t),
-    y2(t) = t18*(x3(t) + x4(t) + x5(t) +((1/3))-x9(t))),
+    y2(t) = t18*(x3(t) + x4(t) + x5(t) +(1/3 -x9(t))),
     y3(t) = t19*(x4(t) + x5(t)),
     y4(t) = t20*(-x6(t)+3),
     y5(t) = t21*x8(t),
     y6(t) = t22*x8(t)*t17/t11,
     y7(t) = x10(t),
     y8(t) = -x7(t)+165
-)
+    )
 
 
 @time println(assess_identifiability(ode))
