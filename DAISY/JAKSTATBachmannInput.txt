@@ -1,5 +1,5 @@
 %B_ IS THE VARIABLE VECTOR
-B_:={y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,x1,x2,x3,x4,x5,x6,X7,x8,X9,x10,x11,X12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25}$
+B_:={k1, k2, k3, k4, k5, y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,x1,x2,x3,x4,x5,x6,X7,x8,X9,x10,x11,X12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25}$
 FOR EACH EL_ IN B_ DO DEPEND EL_,T$
 %B1_ IS THE UNKNOWN PARAMETER VECTOR
 B1_:={t1,t2,t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27}$
@@ -52,9 +52,5 @@ y14 = (x7+x8)*((1+(k4*t27))/t26)}$
 FLAG_:=1$
 SHOWTIME$
 DAISY()$
-%VALUES OF INITIAL CONDITIONS ARE GIVEN
-ICK_:={x1=t01,x2=0,x3=0,x4=0,x5=0,x6=0,x7=t07,x8=0,x9=t09,x10=0,x11=0,x12=0,x13=0,x14=0,x15=0,x16=0,x17=0,x18=0,x19=0,x20=0,x21=0,x22=0,x23=0,x24=0,x25=0}$
-ICUNK_:={x2 = t23}$
-CONDINIZ()$
 SHOWTIME$
 END$
