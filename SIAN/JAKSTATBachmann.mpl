@@ -5,7 +5,7 @@
 read "../IdentifiabilityODE.mpl";
 
 
-sigma := [
+sys := [
   diff(x1(t), t) = (x2(t)+x3(t)+x4(t)+x5(t))*x8(t)*t11/t26 - u5(t)*x1(t)*t10/((x25(t)*t17/t15)+1),
   diff(x2(t), t) = u5(t)*x1(t)*t10/((x25(t)*t17/t15)+1) - x2(t)*t7/((x25(t)*t17/t15)+1) - x2(t)*x8(t)*t11/t26 - 3*x2(t)*t7/((t8*x6(t)+1)*((x25(t)*t17/t15)+1)),
   diff(x3(t), t) = t7*x2(t)/((x25(t)*t17/t15)+1) - t11*x8(t)*x3(t)/t26 - 3*t7*x3(t)/((t8*x6(t)+1)*((x25(t)*t17/t15)+1)),
@@ -47,4 +47,4 @@ sigma := [
   y14(t) = (x7(t)+x8(t))*((1+(u4(t)*t27))/t26)
 ];
 
-IdentifiabilityODE(sigma, GetParameters(sigma)):
+CodeTools[CPUTime](IdentifiabilityODE(sys, GetParameters(sys)));
