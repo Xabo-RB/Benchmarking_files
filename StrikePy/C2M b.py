@@ -15,13 +15,13 @@ h = [x1]
 
 # 1 known input
 u1 = sym.Symbol('u1')  # define the symbolic variable u1
-u = [u1]
+u = []
 
 # 0 unknown inputs
 w = []
 
 # 4 unknown parameters
-p = [[x3], [x4], [x5], [x6]]
+p = [[x3], [x4], [x5], [x6], [u1]]
 
 # dynamic equations
 f = [[-(x3+x4)*x1+x5*x2+x6*u1], [x4*x1-x5*x2]]
