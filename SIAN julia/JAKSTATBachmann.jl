@@ -1,11 +1,6 @@
 
 
-using Logging
-
-using StructuralIdentifiability
-
-logger = Logging.SimpleLogger(stdout, Logging.Info)
-global_logger(logger)
+using Logging, SIAN
 
 
 ode = @ODEmodel(
@@ -50,5 +45,4 @@ ode = @ODEmodel(
     y14(t) = (x7(t)+x8(t))*((1+(u4(t)*t27))/t26)
 )
 
-println(assess_local_identifiability(ode))
-@time println(assess_identifiability(ode))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3, infolevel = 10, nthrds = 1))
