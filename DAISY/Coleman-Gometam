@@ -3,7 +3,7 @@ WRITE "Coleman"$
 B_:={y1,x1,x2}$
 FOR EACH EL_ IN B_ DO DEPEND EL_,T$
 %B1_ IS THE UNKNOWN PARAMETER VECTOR
-B1_:={a1,b11,b12,a2,b21,B22}$
+B1_:={a1,b11,b12,a2,b21,b22}$
 %NUMBER OF STATES
 NX_:=2$
 %NUMBER OF INPUTS 
@@ -11,8 +11,8 @@ NU_:=0$
 %NUMBER OF OUTPUTS
 NY_:=1$
 %MODEL EQUATIONS
-C_:={df(x1,t)=x1*(a1-b11*ln(x1)-b12*ln(x2)),
-	df(x2,t)= x2*(a2-b21*ln(x1)-b22*ln(x2)),
+C_:={df(x1,t)=x1*(a1-b11*log(x1)-b12*log(x2)),
+	df(x2,t)= x2*(a2-b21*log(x1)-b22*log(x2)),
 	y1=x1}$
 
 FLAG_:=1$
