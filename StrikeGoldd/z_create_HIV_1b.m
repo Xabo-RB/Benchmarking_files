@@ -19,8 +19,8 @@ h = [V, Tu+Ti].';
 
 % 1 unknown input (time-varying parameter):
 syms eta;
-u = [eta];
-w = [];
+u = [];
+w = [eta];
 
 % dynamic equations:
 f = [lambda-rho*Tu-eta*Tu*V;
@@ -33,4 +33,5 @@ ics  = [600,33,1e5];
 % which initial conditions are known:
 known_ics = [0,0,0]; 
 
-save('HIV','x','p','u','w','h','f','ics','known_ics');
+save('HIV1b','x','p','u','w','h','f','ics','known_ics');
+
