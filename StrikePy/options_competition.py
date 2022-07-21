@@ -5,7 +5,7 @@ import sympy as sym
 from math import inf
 ###############################################################################
 # (1) NAME OF THE MODEL TO BE STUDIED:
-modelname = 'Coleman-Gometam'
+modelname = 'Competition'
 ##############################################################################
 # (2) FISPO ANALYSIS OPTIONS:
 checkObser = 1    # check state observability, i.e. identifiability of initial conditions (1 = yes; 0 = no).
