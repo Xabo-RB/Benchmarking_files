@@ -48,7 +48,7 @@ kmax=36; %i is chosen as 4
 
 % Step 9: input to the function
 NonlinearObservabilityTest(F,h,X,Theta,U,W,kmax)
-º
+
 % Results: v1 and v2 are observable; deltak1, k2 and m are identifiable; x1
 % and x2 are unobservable; k1 is unidentifiable; w is unobservable.
 toc
