@@ -1,0 +1,22 @@
+Needs["IdentifiabilityAnalysis`"];
+
+deq = {
+	x1'[t] ==  -x1[t]*x5[t] / (k2 + x1[t]), x1[0] == x01,
+	x2'[t] == 2 * x1[t]*x5[t]/((k2 + x1[t])*3) - k4*x2[t], x2[0] == x02,
+	x3'[t] == k4*x2[t]*0.5 - k4*x3[t], x3[0] == x03,
+	x4'[t] == x1[t]*x5[t]/(3*(k2+x1[t])) + k4*x2[t]*0.5 + k4 * x3[t], x4[0] == x04,
+	x5'[t] == -k3 * x5[t], x5[0] == x05
+};
+
+output = {x1[t]; x2[t]+x3[t]; x4[t]};
+
+vars = {x1,x2,x3,x4,x5};
+
+params = {k2,k3,k4,x01,x02,x03,x04,x05};
+
+
+AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,output},vars,params,t]]
+AbsoluteTiming[oad = ObservabilityAnalysis[{deq,output},vars,params,t,u]]
+
+iad["NonIdentifiableParameters"]
+iad["UnidentifiableParameters"]
