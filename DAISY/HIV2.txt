@@ -1,0 +1,25 @@
+WRITE "C2M"$
+%B_ IS THE VARIABLE VECTOR
+B_:={y1,y2,x1,x2,x3,x4}$
+FOR EACH EL_ IN B_ DO DEPEND EL_,T$
+%B1_ IS THE UNKNOWN PARAMETER VECTOR
+B1_:={b,c,d,q1,q2,k1,k2,w1,w2,s}$
+%NUMBER OF STATES
+NX_:=4$
+%NUMBER OF INPUTS 
+NU_:=0$
+%NUMBER OF OUTPUTS
+NY_:=2$
+%MODEL EQUATIONS
+C_:={df(x1,t)=-b*x1*x4-d*x1 + s,
+	df(x2,t)= b*q1*x1*x4-k1*x2-w1*x2,
+	df(x3,t)=b*q2*x1*x4+k1*x2-w2*x3,
+	df(x4,t)=-c*x4+k2*x3,
+	y1= x1,
+	y2 = x4}$
+
+FLAG_:=1$
+SHOWTIME$
+DAISY()$
+SHOWTIME$
+END$
