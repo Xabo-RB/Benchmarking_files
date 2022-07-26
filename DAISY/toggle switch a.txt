@@ -1,0 +1,20 @@
+B_:={u1, y1, u2, x1, x2}$
+FOR EACH EL_ IN B_ DO DEPEND EL_,T$
+
+B1_:={k01,k1,tatc,natc,ntetr,k02,k2,tiptg,niptg,nlaci}$
+ %NUMBER OF STATES
+NX_:=2$
+ %NUMBER OF INPUTS
+NU_:=2$
+ %NUMBER OF OUTPUTS
+NY_:=1$
+
+C_:={df(x1, t) =k01 + k1/(1+(x2/(1+(u1/tatc)^natc))^ntetr) - x1,
+df(x2, t) = k02 + k2/(1+(x1/(1+(u2/tiptg)^niptg))^nlaci) - x2,
+y1 = x1,
+y2 = x2}$
+FLAG_:=1$
+SHOWTIME$
+DAISY()$
+SHOWTIME$
+END$

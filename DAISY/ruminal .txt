@@ -1,0 +1,24 @@
+B_:={y1, y2, y3, x1, x2, x3, x4,x5}$
+FOR EACH EL_ IN B_ DO DEPEND EL_,T$
+
+B1_:={k3, k4, k2}$
+ %NUMBER OF STATES
+NX_:=5$
+ %NUMBER OF INPUTS
+NU_:=0$
+ %NUMBER OF OUTPUTS
+NY_:=3$
+
+C_:={df(x1, t) = -x1*x5 / (k2 + x1),
+df(x2, t) = 2 * x1 * x5 / ((k2 + x1) * 3) - k4 * x2,
+df(x3, t) = k4*x2*0.5 - k4*x3,
+df(x4, t) = x1*x5/ (3 * (k2 + x1)) + k4*x2*0.5 + k4 * x3,
+df(x5, t) = -k3 * x5,
+y1 = x1,
+y2 = x2 + x3,
+y3 = x4}$
+FLAG_:=1$
+SHOWTIME$
+DAISY()$
+SHOWTIME$
+END$

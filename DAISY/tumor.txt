@@ -1,0 +1,24 @@
+B_:={y1,x1,x2,x3,x4,x5}$
+FOR EACH EL_ IN B_ DO DEPEND EL_,T$
+
+B1_:={k3, k4, k5, k6, k7}$
+ %NUMBER OF STATES
+NX_:=5$
+ %NUMBER OF INPUTS
+NU_:=0$
+ %NUMBER OF OUTPUTS
+NY_:=1$
+
+C_:={df(x1, t) = -(k3+k7)*x1+k4*x2,
+df(x2, t) = k3*x1-(k4+a*k5+b*d*k5)*x2+k6*x3+k6*x4+k5*x2*x3+k5*x2*x4,
+df(x3, t) = a*k5*x2-k6*x3-k5*x2*x4,
+df(x4, t) = b*d*k5*x2-k6*x4-k5*x2*x4,
+df(x5, t) = k7*x1,
+y1 = x5}$
+FLAG_:=1$
+SHOWTIME$
+DAISY()$
+IC_:={x1=x01,x2=0,x3=0,x4=0,x5=0}$
+CONDINIZ()$
+SHOWTIME$
+END$
