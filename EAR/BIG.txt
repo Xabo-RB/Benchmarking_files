@@ -1,0 +1,20 @@
+Needs["IdentifiabilityAnalysis`"];
+
+deq = {
+	G'[t] ==  u[t]-(c+si*II[t])*G[t], G[0] == G01,
+	beta'[t] == beta[t]*(((0.021/(24*60))/(1+(8.4/G[t])^1)) - ((0.025/(24*60))/(1+(G[t]/4.8)^8))), beta[0] == beta02,
+	II'[t] == p1*beta[t]*(G[t]^2/(alpha^2+G[t]^2)) - gamma*II[t], II[0] == II03
+};
+
+output = {G[t]};
+
+vars = {G,beta,II};
+
+params = {p1, si, gamma, c, alpha, G01, beta02, IIO3};
+
+
+AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,output},vars,params,t,u]]
+AbsoluteTiming[oad = ObservabilityAnalysis[{deq,output},vars,params,t,u]]
+
+iad["NonIdentifiableParameters"]
+iad["UnidentifiableParameters"]

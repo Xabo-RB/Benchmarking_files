@@ -1,0 +1,42 @@
+Needs["IdentifiabilityAnalysis`"];
+
+deq = {
+	x1'[t] == -(x3 + x4)*x1[t] + x5*x2[t] + x6*u[t], x1[0] == x01,
+	x2'[t] == x4*x1[t] - x5*x2[t], x2[0] == x02
+};
+
+output = {x1[t]};
+
+vars = {x1,x2};
+
+params = {x3,x4,x5,x6,x01,x02};
+
+
+AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,x1[t]},{x1,x2},params,t,u]]
+AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,output},vars,params,t,u]]
+AbsoluteTiming[oad = ObservabilityAnalysis[{deq,output},vars,params,t,u]]
+
+iad["NonIdentifiableParameters"]
+oad["NonObservable"]
+
+
+Needs["IdentifiabilityAnalysis`"];
+
+deq = {
+	x1'[t] == -(x3 + x4)*x1[t] + x5*x2[t] + x6*u, x1[0] == x01,
+	x2'[t] == x4*x1[t] - x5*x2[t], x2[0] == x02
+};
+
+output = {x1[t]};
+
+vars = {x1,x2};
+
+params = {x3,x4,x5,x6,x01,x02,u};
+
+
+AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,x1[t]},{x1,x2},params,t]]
+AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,output},vars,params,t]]
+AbsoluteTiming[oad = ObservabilityAnalysis[{deq,output},vars,params,t]]
+
+iad["NonIdentifiableParameters"]
+oad["NonObservable"]
