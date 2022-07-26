@@ -1,4 +1,4 @@
-# Benchmarking
+# Benchmarking tools for a priori identifiability analysis
 Benchmarking files: input scripts of the identifiability analysis.
 
 ## References
