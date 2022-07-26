@@ -6,7 +6,6 @@
 %    COMBOS: a novel Web implementation, PLoS ONE, 9, e110261.
 
 % Confirm execution
-genssiAskForConfirmation(1);
+%syms x01 x02 x03 x04
 
-%3 derivadas de Lie, en el original son 4, pero también son 4 estados
-genssiMain('SIWR',10);
+genssiMain('PKsg',8);
