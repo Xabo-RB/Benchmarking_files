@@ -1,0 +1,26 @@
+B_:={u1,y1,y2,x1,x2,x3,x4,x5,x6,x7}$
+FOR EACH EL_ IN B_ DO DEPEND EL_,T$
+
+B1_:={a,n1,r3,g1,g2,k1,k2,k3,k4,k5,k6,k7,m1,m2,m3,m4,m5,m6,m7,n2,p1,p2,p3,q1,q2,r1,r2,r4}$
+ %NUMBER OF STATES
+NX_:=7$
+ %NUMBER OF INPUTS
+NU_:=1$
+ %NUMBER OF OUTPUTS
+NY_:=2$
+
+C_:={df(x1, t) = n1*x6^a/(g1^a+x6^a)-m1*x1/(k1+x1)+q1*x7*u1,
+df(x2, t) = p1*x1-r1*x2+r2*x3-m2*x2/(k2+x2),
+df(x3, t) = r1*x2-r2*x3-m3*x3/(k3+x3),
+df(x4, t) = n2*g2^2/(g2^2+x3^2)-m4*x4/(k4+x4),
+df(x5, t) = p2*x4-r3*x5+r4*x6-m5*x5/(k5+x5),
+df(x6, t) = r3*x5-r4*x6-m6*x6/(k6+x6),
+df(x7, t) = p3-m7*x7/(k7+x7)-(p3+q2*x7)*u1,
+y1 = x1,
+y2 = x4}$
+
+FLAG_:=1$
+SHOWTIME$
+DAISY()$
+SHOWTIME$
+END$
