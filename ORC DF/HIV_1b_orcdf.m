@@ -23,11 +23,11 @@ Theta=[lambda rho N delta c];
 
 % Step 6: write the vector of measured inputs U=[u1,...,ur]; U=[], if no
 % measured inputs are applied
-U=[u1];
+U=[];
 
 % Step 7: write the vector of unmeasured inputs W=[w1,...,wnw]; W=[], if no
 % unmeasured inputs are applied
-W=[];
+W=u1;
 
 % Step 8: choose the maximum order of the time derivative of unmeasured
 % inputs considered; normally, it is recommended that kmax=2^i-1>n+l+nw 
