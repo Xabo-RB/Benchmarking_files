@@ -1,8 +1,4 @@
-# Example 6.3 from the paper "Global Identifiability of Differential Models", taken from
-# Balsa-Canto, E., Alonso, A. A., Banga, J. R., 
-# An iterative identification procedure for dynamic modeling of biochemical networks
-
-read "C:/Users/Even/Desktop/SIAN-master/IdentifiabilityODE.mpl";
+read "../IdentifiabilityODE.mpl";
 
 sys := [
 diff(x1(t), t) = u1(t)-(k1+k2)*x1(t),
@@ -12,4 +8,5 @@ diff(x4(t), t) = k6*x2(t)-k5*x4(t),
 y1(t) = s2*x2(t),
 y2(t) = s3*x3(t)
 ];
+
 CodeTools[CPUTime](IdentifiabilityODE(sys, GetParameters(sys)));

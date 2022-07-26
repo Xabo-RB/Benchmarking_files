@@ -1,6 +1,3 @@
-# Example (with initial conditions assumed being unknown) from Section IV of "DAISY: an Efficient Tool to Test Global Identifiability. Some Case Studies"
-# by G. Bellu, M.P. Saccomani
-
 read "../IdentifiabilityODE.mpl";
 
 sigma := [

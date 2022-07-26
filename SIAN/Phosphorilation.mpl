@@ -1,8 +1,5 @@
-# Example 6.3 from the paper "Global Identifiability of Differential Models", taken from
-# Balsa-Canto, E., Alonso, A. A., Banga, J. R., 
-# An iterative identification procedure for dynamic modeling of biochemical networks
 st := time()
-read "C:/Users/Even/Desktop/SIAN-master/IdentifiabilityODE.mpl";
+read "../IdentifiabilityODE.mpl";
 
 sys := [
 diff(x5(t), t) = k5*x6(t) + k4*x6(t) - k6*x5(t)*x3(t),

@@ -1,5 +1,3 @@
-
-
 read "../IdentifiabilityODE.mpl";
 
 

@@ -1,7 +1,5 @@
-# Example 6.3 from the paper "Global Identifiability of Differential Models", taken from
-# Balsa-Canto, E., Alonso, A. A., Banga, J. R., 
-# An iterative identification procedure for dynamic modeling of biochemical networks
-read "C:/Users/Even/Desktop/SIAN-master/IdentifiabilityODE.mpl";
+read "../IdentifiabilityODE.mpl";
+
 st := time()
 # Data from Table 1 in 
 # An iterative identification procedure for dynamic modeling of biochemical networks
