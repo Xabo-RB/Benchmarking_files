@@ -21,4 +21,3 @@ AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,output},vars,params,t,u]]
 AbsoluteTiming[oad = ObservabilityAnalysis[{deq,output},vars,params,t,u]]
 
 iad["NonIdentifiableParameters"]
-iad["UnidentifiableParameters"]
