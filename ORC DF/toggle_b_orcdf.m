@@ -7,8 +7,8 @@ syms k01 k1 tatc natc ntetr ...
      
 
 % Step 2: write the system functions 
-F=[k01 + k1/(1+(x2/(1+(u1/tatc)^natc))^ntetr) - x1;
-   k02 + k2/(1+(x1/(1+(u2/tiptg)^niptg))^nlaci) - x2;];
+F=[k01 + k1/(1+(x2/(1+(w1/tatc)^natc))^ntetr) - x1;
+   k02 + k2/(1+(x1/(1+(w2/tiptg)^niptg))^nlaci) - x2;];
 
 
 % Step 3: write the output functions
