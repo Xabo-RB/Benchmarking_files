@@ -4,4 +4,4 @@ Benchmarking files: input scripts and output files of the identifiability analys
 
 ## Contacts
 
-Any support request, comments or bug reports sent to Xabier Rey Barreiro, xabier.rey@uvigo.es
+Any support request, comments or bug reports sent to Xabier Rey Barreiro and Alejandro F. Villaverde, xabier.rey@uvigo.es, afvillaverde@uvigo.gal.
