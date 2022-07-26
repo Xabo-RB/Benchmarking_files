@@ -1,5 +1,5 @@
 # Benchmarking
-Benchmarking files: input scripts and output files of the identifiability analysis.
+Benchmarking files: input scripts of the identifiability analysis.
 
 ## References
 
