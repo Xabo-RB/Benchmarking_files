@@ -1,0 +1,32 @@
+Needs["IdentifiabilityAnalysis`"];
+
+deq = {
+	x1'[t] == kprod-(kdeg*x1[t])-(k1*x1[t]*u[t]), x1[0] == x01,
+	x2'[t] == -(k3*x2[t])-(kdeg*x2[t])-(0.2*x2[t]*x10[t])+(t1*x4[t])-(x2[t]*x13[t])+(t2*x5[t])+(((k1*x1[t])-(k2*x2[t]*x8[t]))*u[t]), x2[0]==x02,
+	x3'[t] == k3*x2[t]-kdeg*x3[t]+k2*x2[t]*x8[t]*u[t], x3[0] = x03,
+	x4'[t] == 0.2*x2[t]t*x10[t]-t1*x4[t], x4[0] == x04,
+	x5'[t] == x2[t]*x13[t] - t2*x5[t], x5[0] == x05,
+	x6'[t] == (2/10^(5))*x13[t]-0.5*x6[t]*x10[t]+t2*x5[t]-i1*x6[t], x6[0] == x06,
+	x7'[t] == i1*5*x6[t]-0.5*x11[t]*x7[t], x7[0] == x07,
+	x8'[t] == 0.5*x9[t]-c5*x8[t], x8[0] == x08,
+	x9'[t] == (5/10^(7))*x7[t] - (4/10^(4))*x9[t], x9[0] == x09,
+	x10'[t] == -0.2*x2[t]*x10[t]-0.5*x10[t]*x6[t]+c4a*x12[t]-(1/10^(4))*x10[t]-i1a*x10[t]+(5/(10^4))*x11[t],x10[0] == x010,
+	x11'[t] == -0.5*x11[t]*x7[t]+i1a*5*x10[t]-(5/(10^4))*5*x11[t], x11[0] == x011,
+	x12'[t] == (5/10^(7))*x7[t]-c3a*x12[t], x12[0] == x012,
+	x13'[t] == 0.5*x10[t]*x6[t]-(2/10^(5))*x13[t]-x2[t]*x13[t]+e2a*x14[t], x13[0] == x013,
+	x14'[t] == 0.5*x11[t]*x7[t]-e2a*5*x14[t], x14[0] == x014,
+	x15'[t] == (5/(10^7))*x7[t]-(4/(10^4))*x15[t], x15[0] == x015	
+};
+
+output = {x1[t],x10[t]+x13[t],x9[t],x1[t]+x2[t]+x3[t],x2[t],x12[t]};
+
+vars = {x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15};
+
+params = {t1,t2,c3a,c4a,c5,k1,k2,k3,kprod,kdeg,i1,e2a,i1a,x01,x02,x03,x04,x05,x06,x07,x08,x09,x010,x011,x012,x013,x014,x015};
+params = {t1,t2,c3a,c4a,c5,k1,k2,k3,kprod,kdeg,i1,e2a,i1a};
+
+AbsoluteTiming[iad = IdentifiabilityAnalysis[{deq,output},vars,params,t,u]]
+AbsoluteTiming[oad = ObservabilityAnalysis[{deq,output},vars,params,t,u]]
+
+iad["UnidentifiableParameters"]
+oad["NonObservable"]
