@@ -1,3 +1,5 @@
+WRITE "Arabidopsis"$
+
 B_:={u1,y1,y2,x1,x2,x3,x4,x5,x6,x7}$
 FOR EACH EL_ IN B_ DO DEPEND EL_,T$
 
