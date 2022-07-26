@@ -5,7 +5,7 @@ import sympy as sym
 from math import inf
 ###############################################################################
 # (1) NAME OF THE MODEL TO BE STUDIED:
-modelname = 'BIG_known_input'
+modelname = 'Cholera'
 ##############################################################################
 # (2) FISPO ANALYSIS OPTIONS:
 checkObser = 1    # check state observability, i.e. identifiability of initial conditions (1 = yes; 0 = no).
@@ -19,5 +19,3 @@ prev_ident_pars = []
     # x2 = sym.Symbol('x2')
     # x5 = sym.Symbol('x5')
     # prev_ident_pars = [x2, x5]
-
-
