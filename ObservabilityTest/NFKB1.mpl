@@ -13,17 +13,21 @@ infolevel[observabilitySymmetries] := 1 :
 #-----------------------------------------------------------------------------#
 # We assume that diff(Variables[i],t) = VectorsField[i]
 
-r1 := -t1*x1*2.265*u1-t5*x1+t6*x2:
-r2 := t5*x1-t6*x2:
-r3 := t1*2*u1*x1-t2*x3*(-x6+2.8):
-r4 := t2*x3*(-x6+3)-t3*x4:
-r5 := t3*x4-t4*x5:
-r6 := -t7*x3*x6/(1+t13*x1)-t7*x4*x6/(1+t13*x13)+t8*(-x6+3)*92:
-r7 := -t9*x8*(-x6+3)+t10*(-x8+165)*92:
-r8 := t11*(-x8+165):
-r9 := -t12*2.265*u1*x11:
-r10:= x10*t14/(t15+x10)-t16*x13:
-
+r1 := kprod-kdeg*x1-k1*x1*u1:
+r2 := -k3*x2-kdeg*x2-a2*x2*x10+t1*x4-a3*x2*x13+t2*x5+(k1*x1-k2*x2*x8)*u1:
+r3 := k3*x2-kdeg*x3+k2*x2*x8*u1:
+r4 := a2*x2*x10-t1*x4:
+r5 := a3*x2*x13-t2*x5:
+r6 := c6a*x13-a1*x6*x10+t2*x5-i1*x6:
+r7 := i1*kv*x6-a1*x11*x7:
+r8 := c4*x9-c5*x8:
+r9 := c2+c1*x7-c3*x9:
+r10:= -a2*x2*x10-a1*x10*x6+c4a*x12-c5a*x10-i1a*x10+e1a*x11:
+r11 := -a1*x11*x7+i1a*kv*x10-e1a*kv*x11:
+r12 := c2a+c1a*x7-c3a*x12:
+r13 := a1*x10*x6-c6a*x13-a3*x2*x13+e2a*x14:
+r14 := a1*x11*x7-e2a*kv*x14:
+r15 := c2c+c1c*x7-c3c*x15:
 
 VectorField := [
 
@@ -36,21 +40,26 @@ VectorField := [
 	r7,
 	r8,
 	r9,
-	r10
+	r10,
+	r11,
+	r12,
+	r13,
+	r14,
+	r15
 ] :
 
 # We assume that OutputsVariables[i] = OutputSystem[i].
 OutputSystem := [
 
-	x1 + x3 + x4, t18*(x3 + x4 + x5 +((1/3)-x11)), t19*(x4 + x5), t20*(-x6+3), t21*x10, t22*x10*t17/t11, x13, -x8+165
+	x7, x10+x13, x9, x1+x2+x3, x2, x12
 ] :
 
 #-----------------------------------------------------------------------------#
-OutputsVariables:= [y1,y2,y3,y4,y5,y6,y7,y8] 					:
+OutputsVariables:= [y1,y2,y3,y4,y5,y6] 					:
 Inputs 		:= [u1] 					:
-Parameters 	:= [t1, t2 , t3 , t4 , t5 , t6 , t7 , t8 , t9 , t10 , t11 , t12, t13 , t14 , t15 , t16 , t17, t18 , t19 , t20 , t21 , t22]					:
+Parameters 	:= [t1,t2,c3a,c4a,c5,k1,k2,k3,kprod,kdeg,i1,e2a,i1a,a1,a2,a3,c1a,c2a,c5a,c6a,c1,c2,c3,c4,kv,e1a,c1c,c2c,c3c]					:
 # The variables have to be ordered as the vectors field.
-Variables 	:= [x1,x2,x3,x4,x5,x6,x8,x10,x11,x13] 					:
+Variables 	:= [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15] 					:
 #-----------------------------------------------------------------------------#
 # CAUTION read section II of the file INSTALL
 libname := cat(currentdir(),"/release"),libname :
