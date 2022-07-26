@@ -1,0 +1,1 @@
+dx1/dt = p1-p2*x1-u1*x1*x3; dx2/dt =u1*x1*x3-p4*x2; dx3/dt= p3*p4*x2-p5*x3 ;y1 = x3; y2 = x1 + x2;x1(0)=x01;x2(0)=x02;x3(0)=x03;

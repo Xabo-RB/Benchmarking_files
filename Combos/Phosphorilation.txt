@@ -1,0 +1,7 @@
+dx1/dt = k4*x6 + k2*x4 - k1*x1*x2;
+dx2/dt=k3*x4 + k2*x4 + k1*x1*x2;
+dx3/dt=k5*x6 + k3*x4 - k6*x5*x3;
+dx4/dt=-k3*x4 - k2*x4 + k1*x1*x2;
+dx5/dt=k5*x6 + k4*x6 - k6*x5*x3;
+dx6/dt=-k5*x6 - k4*x6 + k6*x5*x3;
+y1=x2;y2=x3;

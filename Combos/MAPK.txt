@@ -1,0 +1,6 @@
+dx1/dt = k1*(s1t-x1)*(KK1^n1)/(KK1^n1+x3^n1)-k2*x1; 
+dx2/dt = k3*(s2t-x2)*x1*(1+(alpha*x3^n2)/(KK2^n2+x3^n2))-k4*x2; 
+dx3/dt = k5*(s3t-x3)*x2-k6*x3; 
+y1 = x1;
+y2 = x2;
+y3 = x3;

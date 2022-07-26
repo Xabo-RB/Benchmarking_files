@@ -1,0 +1,2 @@
+dx1/dt = lm-(d*x1)-(beta*x1*x3); dx2/dt = (beta*x1*x3)-(a*x2); dx3/dt = (k*x2)-(uu*x3); dx4/dt =
+(c*x5*x2*x4)-(c*q*x2*x4)-(b*x4); dx5/dt = (c*q*x2*x4)-(hh*x5); y1 = x4; y2 = x5;
