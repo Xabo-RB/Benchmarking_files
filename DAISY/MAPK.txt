@@ -1,0 +1,23 @@
+B_:={y1,y2,y3,ps1,ps2,ps3}$
+FOR EACH EL_ IN B_ DO DEPEND EL_,T$
+
+B1_:={k1,k2,k3, k4, k5, k6,s1t, s2t, s3t, q7, k8, n1, n2, alpha}$
+ %NUMBER OF STATES q7 es k7
+NX_:=3$
+ %NUMBER OF INPUTS
+NU_:=0$
+ %NUMBER OF OUTPUTS
+NY_:=3$
+
+C_:={df(ps1, t) = k1*(s1t-ps1)*(q7^n1)/(q7^n1+ps3^n1)-k2*ps1,
+df(ps2, t) = k3*(s2t-ps2)*ps1*(1+(alpha*ps3^n2)/(k8^n2+ps3^n2))-k4*ps2,
+df(ps3, t) = k5*(s3t-ps3)*ps2-k6*ps3,
+y1 = ps1,
+y2=ps2,
+y3=ps3}$
+
+FLAG_:=1$
+SHOWTIME$
+DAISY()$
+SHOWTIME$
+END$

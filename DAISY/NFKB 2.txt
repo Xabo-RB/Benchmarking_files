@@ -1,0 +1,40 @@
+WRITE "C2M"$
+%B_ IS THE VARIABLE VECTOR
+B_:={u1,y1,y2,y3,y4,y5,y6,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15}$
+FOR EACH EL_ IN B_ DO DEPEND EL_,T$
+%B1_ IS THE UNKNOWN PARAMETER VECTOR
+B1_:={t1,t2,c3a,c4a,c5,k1,k2,k3,kprod,kdeg,i1,e2a,i1a}$
+%NUMBER OF STATES
+NX_:=15$
+%NUMBER OF INPUTS 
+NU_:=1$
+%NUMBER OF OUTPUTS
+NY_:=6$
+%MODEL EQUATIONS
+C_:={df(x1,t)=kprod-(kdeg*x1)-(k1*x1*u1),
+	df(x2,t)=-(k3*x2)-(kdeg*x2)-(0.2*x2*x10)+(t1*x4)-(a3*x2*x13)+(t2*x5)+(((k1*x1)-(k2*x2*x8))*u1),
+	df(x3,t)=k3*x2-kdeg*x3+k2*x2*x8*u1,
+	df(x4,t)=0.2*x2*x10-t1*x4,
+	df(x5,t)=x2*x13-t2*x5,
+	df(x6,t)= (2/10^(5))*x13-0.5*x6*x10+t2*x5-i1*x6,
+	df(x7,t)=i1*5*x6-0.5*x11*x7,
+	df(x8,t)=0.5*x9-c5*x8,
+	df(x9,t)=(5/10^(7))*x7-(4/10^(4))*x9,
+	df(x10,t)=-0.2*x2*x10-0.5*x10*x6+c4a*x12-(1/10^(4))*x10-i1a*x10+(5/(10^4))*x11,
+	df(x11,t)=-0.5*x11*x7+i1a*5*x10-(5/(10^4))*5*x11,
+	df(x12,t)= (5/10^(7))*x7-c3a*x12,
+	df(x13,t)=0.5*x10*x6-(2/10^(5))*x13-x2*x13+e2a*x14,
+	df(x14,t)=0.5*x11*x7-e2a*5*x14,
+	df(x15,t)=(5/(10^7))*x7-(4/(10^4))*x15,
+	y1=x1,
+	y2 = x10 + x13,
+	y3 = x9,
+	y4 = x1 + x2 + x3,
+	y5 = x2,
+	y6 = x12}$
+
+FLAG_:=1$
+SHOWTIME$
+DAISY()$
+SHOWTIME$
+END$
