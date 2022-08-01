@@ -7,7 +7,8 @@ Xabier Rey Barreiro and Alejandro F. Villaverde. Benchmarking tools for a priori
 
 https://doi.org/10.48550/arXiv.2207.09745
 
-https://arxiv.org/abs/2207.09745
+[*Benchmarking tools for a priori identifiability analysis*](https://arxiv.org/abs/2207.09745).
+
 
 
 ## Contacts
