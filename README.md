@@ -3,11 +3,9 @@ Input scripts of the identifiability analysis. We consider 12 software tools dev
 
 ## References
 
-Xabier Rey Barreiro and Alejandro F. Villaverde. Benchmarking tools for a priori identifiability analysis, 2022.
+Xabier Rey Barreiro and Alejandro F. Villaverde. [*Benchmarking tools for a priori identifiability analysis*](https://arxiv.org/abs/2207.09745)., 2022.
 
 https://doi.org/10.48550/arXiv.2207.09745
-
-[*Benchmarking tools for a priori identifiability analysis*](https://arxiv.org/abs/2207.09745).
 
 
 
