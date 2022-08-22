@@ -13,7 +13,7 @@ F=[lambda-rho*x1-u1*x1*x3;
 
 
 % Step 3: write the output functions
-h=[x3 x1+x2]; 
+h=[x3;x1+x2]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2 x3];
