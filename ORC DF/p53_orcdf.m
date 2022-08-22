@@ -14,7 +14,7 @@ F=[(p1*x4) - (p3*x1) - p4*( (x1^2/(p5+x1))* (1+ (p6*u1/(p7+u1)) ) );
 
 
 % Step 3: write the output functions
-h=[x1 x2 x3 x4]; 
+h=[x1;x2;x3;x4]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2 x3 x4];
