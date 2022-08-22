@@ -14,7 +14,7 @@ F=[(-x1*x5 )/ (k2 + x1);
 
 
 % Step 3: write the output functions
-h=[x1 x3+x2 x4]; 
+h=[x1;x3+x2;x4]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2 x3 x4 x5];
