@@ -15,7 +15,7 @@ F=[lm - (d * xx) - (beta * xx * v);
 
 
 % Step 3: write the output functions
-h=[ww z]; 
+h=[ww;z]; 
 
 % Step 4: write the vector of dynamic states
 X=[xx y v ww z];
