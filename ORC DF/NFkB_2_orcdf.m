@@ -42,7 +42,7 @@ F=[kprod-kdeg*x1-k1*x1*u1;
     c2c+c1c*x7-c3c*x15];
 
 % Step 3: write the output functions
-h=[x7 x10+x13 x9 x1+x2+x3 x2 x12]; 
+h=[x7;x10+x13;x9;x1+x2+x3;x2;x12]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12 x13 x14 x15];
