@@ -14,7 +14,7 @@ F=[-b*x1*x4-d*x1 + s;
 
 
 % Step 3: write the output functions
-h=[x1 x4]; 
+h=[x1;x4]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2 x3 x4];
