@@ -14,7 +14,7 @@ F=[-b1*b0*s*x1*ii - b0*s*ii - s*mu + mu + g*r;
 
 
 % Step 3: wriite the output functiions
-h=[ii r]; 
+h=[ii;r]; 
 
 % Step 4: write the vector of dynamic states
 X=[s x2 ii r x1];

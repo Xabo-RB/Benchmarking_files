@@ -18,7 +18,7 @@ F=[-t1*x1*2.265*u1-t5*x1+t6*x2;
 	x10*t14/(t15+x10)-t16*x13];
 
 % Step 3: write the output functions
-h=[x1 + x3 + x4 t18*(x3 + x4 + x5 +(0.34-x11)) t19*(x4 + x5) t20*(-x6+2.8) t21*x10 t22*x10*t17/t11 x13 -x8+165]; 
+h=[x1 + x3 + x4; t18*(x3 + x4 + x5 +(0.34-x11)); t19*(x4 + x5); t20*(-x6+2.8); t21*x10; t22*x10*t17/t11; x13; -x8+165]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2 x3 x4 x5 x6 x8 x10 x11 x13];

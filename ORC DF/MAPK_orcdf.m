@@ -13,7 +13,7 @@ F=[	k1*(s1t-ps1)*(KK1^n1)/(KK1^n1+ps3^n1)-k2*ps1;
 
 
 % Step 3: write the output functions
-h=[ps1 ps2 ps3]; 
+h=[ps1;ps2;ps3]; 
 
 % Step 4: write the vector of dynamic states
 X=[ps1 ps2 ps3];

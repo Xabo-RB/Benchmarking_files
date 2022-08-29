@@ -22,7 +22,7 @@ F=[	 n1*x6^a/(g1^a+x6^a)-m1*x1/(k1+x1)+q1*x7*u1;
 
 
 % Step 3: write the output functions
-h=[x1 x4]; 
+h=[x1;x4]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2 x3 x4 x5 x6 x7];

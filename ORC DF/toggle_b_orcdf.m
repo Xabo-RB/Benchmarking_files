@@ -12,7 +12,7 @@ F=[k01 + k1/(1+(x2/(1+(w1/tatc)^natc))^ntetr) - x1;
 
 
 % Step 3: write the output functions
-h=[x1 x2]; 
+h=[x1;x2]; 
 
 % Step 4: write the vector of dynamic states
 X=[x1 x2];

@@ -13,7 +13,7 @@ F=[-bi*S*I - S*mu - S*bw*W + R*a + mu;
 
 
 % Step 3: write the output functions
-h=[k*I S+R+I]; 
+h=[k*I;S+R+I]; 
 
 % Step 4: write the vector of dynamic states
 X=[S I W R];
