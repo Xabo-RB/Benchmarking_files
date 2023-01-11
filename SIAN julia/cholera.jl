@@ -17,3 +17,17 @@ ode = @ODEmodel(
 @time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3, infolevel = 10, nthrds = 1))
 
 # @time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, infolevel = 10, nthrds = 1))
+
+
+#1 output
+using Logging, SIAN
+
+ode = @ODEmodel(
+    S'(t) = mu - bi * S(t) * I(t) - bw * S(t) * W(t) - mu * S(t) + a * R(t),
+    I'(t) = bw * S(t) * W(t) + bi * S(t) * I(t) - (gam + mu) * I(t),
+    W'(t) = xi * (I(t) - W(t)),
+    R'(t) = gam * I(t) - (mu + a) * R(t),
+    y1(t) = k * I(t)
+)
+
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3, infolevel = 10, nthrds = 1))
