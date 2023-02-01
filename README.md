@@ -1,5 +1,5 @@
 # Benchmarking files
-Input scripts of the identifiability analysis. We consider 12 software tools developed in 7 programming languages (Matlab, Maple, Mathematica, Julia, Python, Reduce, and Maxima), and evaluate their performance using a set of 25 case studies created from 21 models.
+Input scripts of the identifiability analysis. We consider 13 software tools developed in 7 programming languages (Matlab, Maple, Mathematica, Julia, Python, Reduce, and Maxima), and evaluate their performance using a set of 25 case studies created from 21 models.
 
 ## References
 
