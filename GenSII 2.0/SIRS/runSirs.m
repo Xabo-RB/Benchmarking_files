@@ -1,9 +1,8 @@
 % runHIV runs the structural identifiability analysis for the 
 % model of HIV dynamics described by
 % 
-%    Meshkat et al. (2014). On finding and using identifiable parameter
-%    combinations in nonlinear dynamic Systems Biology models and
-%    COMBOS: a novel Web implementation, PLoS ONE, 9, e110261.
+%Capistrán, M. A., Moreles, M. A., & Lara, B. (2009). Parameter estimation of some epidemic models. 
+% The case of recurrent epidemics caused by respiratory syncytial virus. Bulletin of mathematical biology, 71, 1890-1901.
 
 % Confirm execution
 genssiAskForConfirmation(1);
