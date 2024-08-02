@@ -13,15 +13,5 @@ ode = @ODEmodel(
 )
 
 
-@time res = identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1)
-
-println(res)
-
-
-
-
-
-
-
-
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3))
 

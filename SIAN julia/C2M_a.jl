@@ -12,9 +12,7 @@ ode = @ODEmodel(
     y1(t) = x1
 )
 
-@time res = identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1)
-
-println(res)
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3))
 
 #u constant
 
@@ -24,6 +22,4 @@ ode = @ODEmodel(
     y1(t) = x1
 )
 
-@time res = identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 0, nthrds = 1)
-
-println(res)
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3))
