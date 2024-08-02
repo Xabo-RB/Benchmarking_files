@@ -46,6 +46,4 @@ ode = SIAN.set_parameter_values(ode, OrderedDict(
     c_3c => Nemo.QQ(4, 10^(4))
 ))
 
-@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3, infolevel = 10, nthrds = 1))
-
-@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3, infolevel = 10, nthrds = 1))
+@time println(identifiability_ode(ode, get_parameters(ode); p = 0.99, p_mod = 2^29 - 3))
